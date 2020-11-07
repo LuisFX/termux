@@ -15,6 +15,11 @@ exit
 
 Now you can launch Termux normally.
 
+### Enable device storage access
+```shell
+termux-setup-storage
+```
+
 ### Install proot
 
 ```shell
@@ -120,13 +125,13 @@ bash ~/xfce19.sh
 
 #### Install VS code
 ```shell
-. <( wget -O - https://code.headmelted.com/installers/apt.sh )
+wget -O- https://code.headmelted.com/installers/apt.sh | sudo bash
 ```
 
 
 #### Install NVM
 ```shell
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | sudosudo bash
 ```
 
 Edit your bashrc file to "unset PREFIX"
@@ -137,14 +142,14 @@ Right before "
 
 Logout/reboot device then install node/npm using NVM
 
-#### Install Azure Functions Locally
-```shell
-npm i -g azure-functions-core-tools@3 --unsafe-perm true
-```
-
 
 ```shell
 nvm install node
+```
+
+#### Install Azure Functions Locally
+```shell
+npm i -g azure-functions-core-tools@3 --unsafe-perm true
 ```
 
 #### Install yarn
