@@ -2,26 +2,27 @@
 
 Install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en&gl=US) app on your android device.
 
-### Install proot
-
-```shell
-pkg install proot
-pkg install proot-distro
-proot-distro install ubuntu
-```
-
 ### Update Termux itself
 
 Quit all instances of Termux. After that, long-press the app button and launch the app in "failsafe" mode.
 
 ```shell
-apt update && apt upgrade -y
-#apt install neofetch
+pkg update -y
+#pkg install neofetch
 #neofetch
 exit
 ```
 
 Now you can launch Termux normally.
+
+### Install proot
+
+```shell
+# pkg install proot
+pkg install -y proot-distro
+proot-distro install ubuntu
+```
+
 
 ## Distro Login
 After the distro is installed, you must "login". Every step below MUST be run within the distro.
@@ -41,7 +42,7 @@ apt update && apt upgrade -y
 ### Add a user with sudo privileges, and switch to that user
 
 ```shell
-apt install nano sudo
+apt install -y nano sudo
 sudo useradd -m -s /bin/bash -c "<Display Name>" <username>
 sudo passwd <username>
 sudo usermod -aG sudo <username>
@@ -68,7 +69,9 @@ su - <username>
 ```
 
 ### Install dependencies
-sudo apt install wget curl libicu-dev git gpg
+```shell
+sudo apt install -y wget curl libicu-dev git gpg
+```
 
 ### Install dotnet 3.1
 
@@ -76,11 +79,13 @@ sudo apt install wget curl libicu-dev git gpg
 wget https://download.visualstudio.microsoft.com/download/pr/7a027d45-b442-4cc5-91e5-e5ea210ffc75/68c891aaae18468a25803ff7c105cf18/dotnet-sdk-3.1.403-linux-arm64.tar.gz
 
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.403-linux-arm64.tar.gz -C $HOME/dotnet
+echo "export DOTNET_ROOT=$HOME/dotnet" >> ~/.bashrc
+echo "export PATH=$PATH:$HOME/dotnet" >> ~/.bashrc
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
 
-### Edit .bashrc
+<!-- ### Edit .bashrc
 
 ```shell
 sudo nano ~/.bashrc
@@ -91,7 +96,7 @@ Add the following entries to the bottom of the file.
 ```shell
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
-```
+``` -->
 
 ### Install code-server (allows a Visual Code Editor to be user remotely)
 
