@@ -40,14 +40,17 @@ proot-distro login ubuntu
 
 ```shell
 apt update && apt upgrade -y
-#apt install neofetch
-#neofetch
+```
+
+## Install dependencies
+
+```shell
+apt install -y chromium-browser nano sudo neofetch wget curl libicu-dev git gpg
 ```
 
 ### Add a user with sudo privileges, and switch to that user
 
 ```shell
-apt install -y nano sudo
 sudo useradd -m -s /bin/bash -c "<Display Name>" <username>
 sudo passwd <username>
 sudo usermod -aG sudo <username>
@@ -71,11 +74,6 @@ Switch to that user.
 
 ```shell
 su - <username>
-```
-
-### Install dependencies
-```shell
-sudo apt install -y wget curl libicu-dev git gpg
 ```
 
 ### Install dotnet 3.1
@@ -117,8 +115,13 @@ cp ./code-server2.1698-vsc1.41.1-linux-arm64/code-server /bin
 #### XFCE
 
 ```shell
-wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/APT/XFCE4/xfce19.sh -O /root/xfce19.sh
-bash ~/xfce19.sh
+mkdir code && cd code
+git clone https://github.com/luisfx/termux.git && cd termux
+chmod +x andronix_xfce19.sh
+./andronix_xfce19.sh
+
+# wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/APT/XFCE4/xfce19.sh -O /root/xfce19.sh
+# bash ~/xfce19.sh
 
 #wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/DesktopEnvironment/Apt/Xfce4/de-apt-xfce4.sh && sudo bash #de-apt-xfce4.sh
 ```

@@ -31,9 +31,9 @@ dbus-launch --exit-with-session startxfce4 &' > ~/.vnc/xstartup
 
 echo " "
 
-echo "Running browser patch"
-wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Uninstall/ubchromiumfix.sh && chmod +x ubchromiumfix.sh
-./ubchromiumfix.sh && rm -rf ubchromiumfix.sh
+#echo "Running browser patch"
+#wget https://raw.githubusercontent.com/AndronixApp/AndronixOrigin/master/Uninstall/ubchromiumfix.sh && chmod +x ubchromiumfix.sh
+#./ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
 echo "You can now start vncserver by running vncserver-start"
 echo " "
