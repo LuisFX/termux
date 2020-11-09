@@ -82,8 +82,8 @@ su - <username>
 wget https://download.visualstudio.microsoft.com/download/pr/7a027d45-b442-4cc5-91e5-e5ea210ffc75/68c891aaae18468a25803ff7c105cf18/dotnet-sdk-3.1.403-linux-arm64.tar.gz
 
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.403-linux-arm64.tar.gz -C $HOME/dotnet
-echo "export DOTNET_ROOT=$HOME/dotnet" >> ~/.bashrc
-echo "export PATH=$PATH:$HOME/dotnet" >> ~/.bashrc
+echo 'export DOTNET_ROOT=$HOME/dotnet' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/dotnet' >> ~/.bashrc
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
