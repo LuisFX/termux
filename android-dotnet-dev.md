@@ -88,6 +88,14 @@ export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
 
+### Install useful dotnet templates
+
+```shell
+dotnet new -i SAFE.Template
+dotnet new --install Microsoft.Azure.WebJobs.ProjectTemplates::3.1.1624
+dotnet new --install Microsoft.Azure.WebJobs.ItemTemplates::3.1.1624
+```
+
 <!-- ### Edit .bashrc
 
 ```shell
