@@ -2,6 +2,8 @@
 
 Install [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=en&gl=US) app on your android device.
 
+note: To resize Termux text -> CTRL+ALT+ (+/-)
+
 ### Update Termux itself
 
 Quit all instances of Termux. After that, long-press the app button and launch the app in "failsafe" mode.
