@@ -112,10 +112,19 @@ export PATH=$PATH:$HOME/dotnet
 ### Install code-server (allows a Visual Code Editor to be user remotely)
 
 ```shell
+#latest release: https://github.com/cdr/code-server/releases
+
+Debian based:
+wget https://github.com/cdr/code-server/releases/download/v3.9.0/code-server_3.9.0_arm64.deb
+dpkg -i code-server_3.9.0_arm64.deb
+
+wget https://github.com/cdr/code-server/releases/download/v3.9.0/code-server-3.9.0-linux-arm64.tar.gz
 wget https://github.com/cdr/code-server/releases/download/2.1698/code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
-tar -xvf ./code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
-rm ./code-server2.1698-vsc1.41.1-linux-arm64.tar.gz
-cp ./code-server2.1698-vsc1.41.1-linux-arm64/code-server /bin
+tar -xvf ./code-server-3.9.0-linux-arm64.tar.gz
+rm ./code-server-3.9.0-linux-arm64.tar.gz
+cp ./code-server-3.9.0-linux-arm64/code-server /bin
+
+#run example: code-server --port 8445 --auth none --bind-addr <ip> (192.168.0.1)
 ```
 
 ## Add Desktop Environment
