@@ -25,7 +25,7 @@ termux-setup-storage
 ```shell
 # pkg install proot
 pkg install -y proot-distro
-proot-distro install ubuntu
+proot-distro install debian-buster
 ```
 
 
@@ -33,10 +33,10 @@ proot-distro install ubuntu
 After the distro is installed, you must "login". Every step below MUST be run within the distro.
 
 ```shell
-proot-distro login ubuntu
+proot-distro login debian-buster
 ```
 
-## Update the ubuntu distro
+## Update distro
 
 ```shell
 apt update && apt upgrade -y
@@ -45,7 +45,13 @@ apt update && apt upgrade -y
 ## Install dependencies
 
 ```shell
-apt install -y chromium-browser nano sudo neofetch wget curl libicu-dev git gpg
+apt install -y firefox-esr nano sudo neofetch wget curl libicu-dev git gpg
+```
+
+### Install Chrome and modify desktop link
+```
+apt install chromium -y
+sed -i 's/chromium %U/chromium --no-sandbox %U/g' /usr/share/applications/chromium.desktop
 ```
 
 ### Add a user with sudo privileges, and switch to that user
