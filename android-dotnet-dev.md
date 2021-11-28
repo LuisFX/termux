@@ -82,12 +82,17 @@ Switch to that user.
 su - <username>
 ```
 
-### Install dotnet 3.1
+### Install dotnet 3.1 and 6.0
 
 ```shell
 wget https://download.visualstudio.microsoft.com/download/pr/7a027d45-b442-4cc5-91e5-e5ea210ffc75/68c891aaae18468a25803ff7c105cf18/dotnet-sdk-3.1.403-linux-arm64.tar.gz
 
+wget https://download.visualstudio.microsoft.com/download/pr/adcd9310-5072-4179-9b8b-16563b897995/15a7595966f488c74909e4a9273c0e24/dotnet-sdk-6.0.100-linux-arm64.tar.gz
+
+
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.403-linux-arm64.tar.gz -C $HOME/dotnet
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.100-linux-arm64.tar.gz -C $HOME/dotnet
+
 echo 'export DOTNET_ROOT=$HOME/dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$HOME/dotnet' >> ~/.bashrc
 export DOTNET_ROOT=$HOME/dotnet
