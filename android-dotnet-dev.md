@@ -97,6 +97,8 @@ echo 'export DOTNET_ROOT=$HOME/dotnet' >> ~/.bashrc
 echo 'export PATH=$PATH:$HOME/dotnet' >> ~/.bashrc
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
+
+source ~/.bashrc
 ```
 
 ### Install useful dotnet templates
