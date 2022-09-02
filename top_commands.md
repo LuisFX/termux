@@ -32,3 +32,12 @@ rg -i <string> #search for string in desired path (case-insensitive)
 
 rg -e '<regex>' #search using regex
 ```
+
+FuzzyFinder: fuzzy search on directories and terminal history
+```bash
+sudo apt install fzf
+
+#to search history ctrl+r
+```
+
+Midnigt Commander
